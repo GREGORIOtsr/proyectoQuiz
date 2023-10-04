@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Pixelify Sans', cursive;
+    src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
+} 
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --indigo: #094582ff;
+    --denim: #365facff;
+    --glaucous: #6987C1;
+    --gold: #FFD321;
+    --saffron: #e4b702ff;
+    --black: #000000ff;
+    --white: #ffffffff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(var(--indigo), var(--denim), var(--glaucous));
+    background-repeat: no-repeat;
+    font-size: 0;
+    text-align: center;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+header {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    background-color: var(--gold);
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 8px 15px #0008;
+    border-bottom: 2px solid var(--denim);
+}
+
+header img {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 5px 5px #09458290);
+}
+
+.select {
+    visibility: hidden;
+    width: 30px;
+}
+
+#quizTitle {
+    font-size: 15px;
+    width: 5em;
+    margin-top: 0;
+    align-self: center;
+}
+
+#startSection {
+    background-image: url(../assets/textBox.png);
+    filter: drop-shadow(10px 10px 1px #000);
+    margin: 180px 30px 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#start {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 40px;
+    margin: 30px 30px 30px 0;
+    padding: 10px;
+    background: none;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+
+    header {
+        padding: 1.5rem;
+    }
+
+    header img {
+        width: 22rem;
+    }
+
+    .select {
+        width: 3rem;
+    }
+
+    #quizTitle {
+        font-size: 1.3rem;
+    }
+
+    #start {
+        font-size: 4rem;
+        padding: 1.3rem;
+        padding-left: 0;
+    }
+
+}
+
+@media screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1600px) {
+    
+    header {
+        padding: 1rem;
+    }
+
+    header img {
+        width: 15rem;
+    }
+
+    .select {
+        width: 2rem;
+    }
+
+    #quizTitle {
+        font-size: 1rem;
+    }
+
+    #start {
+        font-size: 3rem;
+        padding: 1.3rem;
+        padding-left: 1.2rem;
+    }
+
+}
