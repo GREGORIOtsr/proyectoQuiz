@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,9 +21,30 @@
     </header>
 
     <main>
-        <section id="startSection">
+<!--         <section id="startSection">
             <img src="./assets/select.png" alt="Select arrow" id="selectStart" class="select">
             <button id="start">Start</button>
+        </section> -->
+
+        <section>
+            <form action="#" id="quizForm">
+                <legend>¿Cuántos Pokémon hay en total?</legend>
+                
+                <div id="questionDiv">
+                    <label for="answer1">890</label>
+                    <input type="radio" name="answer" id="answer1" class="radioButton" value="answer1">
+
+                    <label for="answer2">1017</label>
+                    <input type="radio" name="answer" id="answer2" class="radioButton" value="answer2">
+
+                    <label for="answer3">974</label>
+                    <input type="radio" name="answer" id="answer3" class="radioButton" value="answer3">
+
+                    <label for="answer4">941</label>
+                    <input type="radio" name="answer" id="answer4" class="radioButton" value="answer4">
+                </div>
+                    <input type="submit" id="submit" value="Submit">
+            </form>
         </section>
     </main>
 

@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Pixelify Sans', cursive;
     src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap);
 } 
 
 * {
@@ -23,49 +25,67 @@ html {
 
 body {
     margin: 0;
-    background-image: linear-gradient(var(--indigo), var(--denim), var(--glaucous));
+    background-image: url(../assets/background.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     font-size: 0;
     text-align: center;
-    font-family: 'Pixelify Sans', cursive;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 header {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
-    background-color: var(--gold);
     margin: 0;
     padding: 20px;
-    box-shadow: 0 8px 15px #0008;
-    border-bottom: 2px solid var(--denim);
 }
 
 header img {
-    width: 200px;
+    width: 150px;
     height: auto;
-    filter: drop-shadow(0 5px 5px #09458290);
+    filter: drop-shadow(0 5px 5px #094582ff);
 }
 
 .select {
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 30px;
+    position: absolute;
+    margin-left: 6.3em;
+}
+
+#selectAns1 {
+    margin-top: 2.05em;
+}
+
+#selectAns2 {
+    margin-top: 7.65em;
+}
+
+#selectAns3 {
+    margin-top: 13.28em;
+}
+
+#selectAns4 {
+    margin-top: 18.9em;
 }
 
 #quizTitle {
     font-size: 15px;
-    width: 5em;
+    width: 4em;
     margin-top: 0;
     align-self: center;
 }
 
 #startSection {
     background-image: url(../assets/textBox.png);
-    filter: drop-shadow(10px 10px 1px #000);
+    filter: drop-shadow(10px 10px 2px #000);
     margin: 180px 30px 0;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    visibility: hidden;
 }
 
 #start {
@@ -76,6 +96,47 @@ header img {
     background: none;
 	border: none;
 	cursor: pointer;
+}
+
+#quizForm {
+    font-size: 20px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#quizForm legend {
+    font-size: 1.4em;
+    padding: 20px 10px;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+#questionDiv {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    margin: 0.5em;
+}
+
+#questionDiv label {
+    background-image: url(../assets/textBox.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: fit-content;
+    min-width: fit-content;
+    font-size: 1.5em;
+    margin: 0 0 0.4em;
+    padding: 1em 2em;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+#submit {
+    margin-top: 3em;
+    width: 5em;
+    align-self: center;
 }
 
 
