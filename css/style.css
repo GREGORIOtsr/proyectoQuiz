@@ -7,6 +7,7 @@
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -25,11 +26,13 @@ html {
 
 body {
     margin: 0;
-    background-image: url(../assets/background.png);
+    background: url(../assets/background.png);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-size: 0;
+    position: relative;
+    font-size: 20px;
     text-align: center;
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
@@ -43,55 +46,81 @@ header {
 }
 
 header img {
-    width: 150px;
+    width: 200px;
     height: auto;
     filter: drop-shadow(0 5px 5px #094582ff);
 }
 
-.select {
-    /* visibility: hidden; */
-    width: 30px;
+input[type='radio'] {
+    display: none;
+}
+
+input[type='submit'] {
+    font-family: 'Pixelify Sans', cursive;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 4em;
+    align-self: center;
+    padding: 10px 20px;
+}
+
+.question {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    margin: 0.5em 0 5em;
+}
+
+.question label {
+    font-size: 1.2em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.textBox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    background-image: url(../assets/textBox.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2px 0;
+    width: 240px;
+    height: 130px;
+    
+}
+
+.textBox p {
+    font-family: 'Pixelify Sans', cursive;
     position: absolute;
-    margin-left: 6.3em;
-}
-
-#selectAns1 {
-    margin-top: 2.05em;
-}
-
-#selectAns2 {
-    margin-top: 7.65em;
-}
-
-#selectAns3 {
-    margin-top: 13.28em;
-}
-
-#selectAns4 {
-    margin-top: 18.9em;
+    font-size: 1.5em;
+    margin: 0.7em 5.8em 0 0;
 }
 
 #quizTitle {
-    font-size: 15px;
+    font-size: 18px;
     width: 4em;
     margin-top: 0;
     align-self: center;
 }
 
 #startSection {
+    display: none;
     background-image: url(../assets/textBox.png);
-    filter: drop-shadow(10px 10px 2px #000);
     margin: 180px 30px 0;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    visibility: hidden;
 }
 
 #start {
     font-family: 'Pixelify Sans', cursive;
     font-size: 40px;
-    margin: 30px 30px 30px 0;
+    margin: 30px 0px;
     padding: 10px;
     background: none;
 	border: none;
@@ -99,46 +128,19 @@ header img {
 }
 
 #quizForm {
-    font-size: 20px;
     display: flex;
     flex-flow: column wrap;
 }
 
-#quizForm legend {
+#quizForm h2 {
     font-size: 1.4em;
-    padding: 20px 10px;
+    padding: 0 10px;
     font-family: 'Pixelify Sans', cursive;
 }
 
-#questionDiv {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    margin: 0.5em;
+#quizForm h2 img {
+    padding-top: 8px;
 }
-
-#questionDiv label {
-    background-image: url(../assets/textBox.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: fit-content;
-    min-width: fit-content;
-    font-size: 1.5em;
-    margin: 0 0 0.4em;
-    padding: 1em 2em;
-}
-
-input[type='radio'] {
-    display: none;
-}
-
-#submit {
-    margin-top: 3em;
-    width: 5em;
-    align-self: center;
-}
-
 
 
 @media only screen 
@@ -146,25 +148,65 @@ input[type='radio'] {
   and (max-device-width: 1024px) {
 
     header {
-        padding: 1.5rem;
+        padding: 1.5em;
     }
 
     header img {
-        width: 22rem;
+        width: 18em;
     }
 
-    .select {
-        width: 3rem;
+    input[type='submit'] {
+        font-size: 2.5em;
+        border: 4px solid black;
+        border-radius: 10px;
+        margin-bottom: 2em;
+    }
+
+    .question {
+        margin: 2em 0 6em;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question label {
+        font-size: 2.4em;
+    }
+    
+    .question label img{
+        width: 3em;
+    }
+    
+    .textBox {
+        margin: 2em 1.6em;
+        width: 16em;
+        height: 8em;
+        
+    }
+    
+    .textBox p {
+        font-size: 2em;
+        margin: 0.4em 6em 0 0;
     }
 
     #quizTitle {
-        font-size: 1.3rem;
+        font-size: 1.8em;
     }
 
     #start {
-        font-size: 4rem;
-        padding: 1.3rem;
-        padding-left: 0;
+        font-size: 3.5em;
+        padding: 0.5em;
+        padding-left: 0.5em;
+    }
+
+    #quizForm h2 {
+        font-size: 2.4em;
+        padding: 0 1.2em;
+        margin-top: 2em;
+    }
+
+    #quizForm h2 img {
+        width: 4em;
     }
 
 }
@@ -174,25 +216,82 @@ input[type='radio'] {
   and (max-device-width: 1600px) {
     
     header {
-        padding: 1rem;
+        padding: 2em;
     }
 
     header img {
-        width: 15rem;
+        width: 12em;
     }
 
-    .select {
-        width: 2rem;
+    input[type='submit'] {
+        font-size: 1.8em;
+        border: 4px solid black;
+        border-radius: 15px;
+        margin-bottom: 2em; 
+        transition: ease 0.5s;
+    }
+    
+    input[type='submit']:hover {
+        box-shadow: 5px 5px 0 black;
+    }
+
+    .question {
+        margin: 2em 1em 6em;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question label {
+        font-size: 2.2em;
+    }
+    
+    .question label img{
+        width: 3em;
+    }
+    
+    .textBox {
+        margin: 2em 5em;
+        width: 16em;
+        height: 8em;
+        transition: ease 0.5s;
+    }
+    
+    .textBox:hover {
+        filter: drop-shadow(10px 10px 0 #000); 
+    }
+    
+    .textBox p {
+        font-size: 2em;
+        margin: 0.4em 6em 0 0;
     }
 
     #quizTitle {
-        font-size: 1rem;
+        font-size: 1.2em;
+    }
+
+    #startSection {
+        transition: ease 0.5s;
+    }
+
+    #startSection:hover {
+        filter: drop-shadow(10px 10px 0 #000); 
     }
 
     #start {
         font-size: 3rem;
         padding: 1.3rem;
         padding-left: 1.2rem;
+    }
+
+    #quizForm h2 {
+        font-size: 2.4em;
+        padding: 0 1.2em;
+        margin-top: 2em;
+    }
+
+    #quizForm h2 img {
+        width: 3em;
     }
 
 }
