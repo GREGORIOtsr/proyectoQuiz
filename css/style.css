@@ -3,11 +3,27 @@
     src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
     font-family: 'M PLUS Rounded 1c', sans-serif;
     src: url(https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap);
-} 
+}
 
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 :root {
@@ -18,6 +34,11 @@
     --saffron: #e4b702ff;
     --black: #000000ff;
     --white: #ffffffff;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -55,7 +76,7 @@ input[type='radio'] {
     display: none;
 }
 
-input[type='submit'] {
+input[type='submit'], #restart {
     font-family: 'Pixelify Sans', cursive;
     background-color: white;
     border: 2px solid black;
@@ -77,6 +98,18 @@ input[type='submit'] {
     display: flex;
     flex-flow: row;
     align-items: center;
+    cursor: pointer;
+}
+
+.selectArrow {
+    display: none;
+}
+
+.show {
+    display: '';
+    position: absolute;
+    width: 40px;
+    margin: 2.2em 14em 0 0;
 }
 
 .textBox {
@@ -94,11 +127,15 @@ input[type='submit'] {
     
 }
 
-.textBox p {
+.option {
     font-family: 'Pixelify Sans', cursive;
     position: absolute;
     font-size: 1.5em;
     margin: 0.7em 5.8em 0 0;
+}
+
+.appearAni {
+    animation: appear 1.5s;
 }
 
 #quizTitle {
@@ -109,10 +146,11 @@ input[type='submit'] {
 }
 
 #startSection {
-    display: none;
     background-image: url(../assets/textBox.png);
-    margin: 180px 30px 0;
-    background-size: contain;
+    margin: 180px auto 0;
+    height: 150px;
+    width: 300px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -130,6 +168,7 @@ input[type='submit'] {
 #quizForm {
     display: flex;
     flex-flow: column wrap;
+    transition: ease 1.5s;
 }
 
 #quizForm h2 {
@@ -140,6 +179,77 @@ input[type='submit'] {
 
 #quizForm h2 img {
     padding-top: 8px;
+}
+
+#resultSection {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 0.5em 0 5em;
+}
+
+#resultSection h1 {
+    font-family: 'Pixelify Sans', cursive;
+
+}
+
+#resultSection h2 {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 1.4em;
+    padding: 0 10px;
+}
+
+#result {
+    margin: 30px 10px 200px;
+}
+
+#result p {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 80px;
+    margin: 0;
+}
+
+#correctAsnwers {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#correctAsnwers h1 {
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+#correctAsnwers p:last-child {
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+#correctAsnwers .textBox {
+    margin-bottom: 100px;
+}
+
+#backToTop {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0009;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border-radius: 10px;
+  }
+
+#backToTop img {
+    width: 30px;
+    height: 30px;
+    padding: 3px 2px 0 0;
 }
 
 
@@ -176,6 +286,11 @@ input[type='submit'] {
     .question label img{
         width: 3em;
     }
+
+    .selectArrow {
+        width: 3.2em;
+        margin: 2.3em 18.5em 0 0;
+    }
     
     .textBox {
         margin: 2em 1.6em;
@@ -184,13 +299,18 @@ input[type='submit'] {
         
     }
     
-    .textBox p {
+    .textBox .option {
         font-size: 2em;
         margin: 0.4em 6em 0 0;
     }
 
     #quizTitle {
         font-size: 1.8em;
+    }
+
+    #startSection {
+        height: 11em;
+        width: 20em;
     }
 
     #start {
@@ -207,6 +327,16 @@ input[type='submit'] {
 
     #quizForm h2 img {
         width: 4em;
+    }
+
+    #backToTop {
+        width: 60px;
+        height: 60px;
+    }
+
+    #backToTop img {
+        width: 50px;
+        height: 50px;
     }
 
 }
@@ -249,6 +379,11 @@ input[type='submit'] {
     .question label img{
         width: 3em;
     }
+
+    .selectArrow {
+        width: 3.2em;
+        margin: 2.3em 18.5em 0 0;
+    }
     
     .textBox {
         margin: 2em 5em;
@@ -257,11 +392,7 @@ input[type='submit'] {
         transition: ease 0.5s;
     }
     
-    .textBox:hover {
-        filter: drop-shadow(10px 10px 0 #000); 
-    }
-    
-    .textBox p {
+    .textBox .option {
         font-size: 2em;
         margin: 0.4em 6em 0 0;
     }
@@ -271,16 +402,20 @@ input[type='submit'] {
     }
 
     #startSection {
+        margin-top: 4em;
+        height: 9em;
+        width: 18em;
         transition: ease 0.5s;
     }
 
     #startSection:hover {
-        filter: drop-shadow(10px 10px 0 #000); 
+        filter: drop-shadow(10px 10px 0 #000);
+        transform: scale(1.1);
     }
 
     #start {
         font-size: 3rem;
-        padding: 1.3rem;
+        padding: 1.5rem;
         padding-left: 1.2rem;
     }
 
@@ -292,6 +427,21 @@ input[type='submit'] {
 
     #quizForm h2 img {
         width: 3em;
+    }
+    
+    #quizForm .textBox:hover {
+        filter: drop-shadow(10px 10px 0 #000);
+        transform: scale(1.1);
+    }
+
+    #backToTop {
+        width: 70px;
+        height: 70px;
+    }
+
+    #backToTop img {
+        width: 60px;
+        height: 60px;
     }
 
 }
