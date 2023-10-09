@@ -99,10 +99,7 @@ input[type='submit'], #restart {
     flex-flow: row;
     align-items: center;
     cursor: pointer;
-}
-
-.selectArrow {
-    display: none;
+    z-index: 99;
 }
 
 .show {
@@ -124,7 +121,8 @@ input[type='submit'], #restart {
     margin: 2px 0;
     width: 240px;
     height: 130px;
-    
+    border-radius: 10px;
+    transition: ease 0.5s;
 }
 
 .option {
@@ -132,6 +130,7 @@ input[type='submit'], #restart {
     position: absolute;
     font-size: 1.5em;
     margin: 0.7em 5.8em 0 0;
+    z-index: 98;
 }
 
 .appearAni {
@@ -286,11 +285,6 @@ input[type='submit'], #restart {
     .question label img{
         width: 3em;
     }
-
-    .selectArrow {
-        width: 3.2em;
-        margin: 2.3em 18.5em 0 0;
-    }
     
     .textBox {
         margin: 2em 1.6em;
@@ -379,17 +373,11 @@ input[type='submit'], #restart {
     .question label img{
         width: 3em;
     }
-
-    .selectArrow {
-        width: 3.2em;
-        margin: 2.3em 18.5em 0 0;
-    }
     
     .textBox {
         margin: 2em 5em;
         width: 16em;
         height: 8em;
-        transition: ease 0.5s;
     }
     
     .textBox .option {
