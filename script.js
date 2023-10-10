@@ -10,8 +10,7 @@ const audioButton = document.getElementById('audioButton');
 const jigglypuff = document.querySelector('#audioButton img');
 
 const audio = document.getElementById('littlerootTown');
-// audio.volume = 0.15;
-audio.volume = 0;
+audio.volume = 0.15;
 
 const rightAnswers = ['answer1b', 'answer2a', 'answer3a', 'answer4d', 'answer5c', 'answer6a', 'answer7c', 'answer8b', 'answer9d', 'answer10c']
 let notAnswered = '';
