@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Quiz</title>
+
+    <!-- Link CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <!-- Link fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
@@ -21,12 +28,18 @@
     </header>
 
     <main>
+        <!-- Music -->
+        <audio src="./assets/littlerootTown.mp3" id="littlerootTown" controls autoplay loop></audio>
+
+        <!-- Mute/Unmute button -->
+        <button id="audioButton"><img src="./assets/sprites/jigglypuff.gif" alt="jigglypuff Sprite Gif"></button>
+        
         <!-- Start menu -->
         <section id="startSection">
             <button type="button" id="start">Start</button>
         </section>
 
-        <!-- Form/Quiz onsubmit="formSumbit()" -->
+        <!-- Form/Quiz -->
         <section>
             <form action="#" id="quizForm" style="display: none;">
 
@@ -399,9 +412,9 @@
             </article>
         </section>
 
-        <button id="backToTop"><img src="./assets/arrowTop.png" alt="Arrow back to top" onclick="backToTop()"></button>
+        <!-- Back to top button -->
+        <button id="backToTop"><img src="./assets/arrowTop.png" alt="Arrow back to top"></button>
     </main>
-
 
     <script src="./script.js"></script>
 </body>
