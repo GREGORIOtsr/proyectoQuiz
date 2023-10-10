@@ -84,6 +84,7 @@ input[type='submit'], #restart {
     margin-bottom: 4em;
     align-self: center;
     padding: 10px 20px;
+    transition: ease 0.5s;
 }
 
 .question {
@@ -351,12 +352,12 @@ input[type='submit'], #restart {
         font-size: 1.8em;
         border: 4px solid black;
         border-radius: 15px;
-        margin-bottom: 2em; 
-        transition: ease 0.5s;
+        margin-bottom: 2em;
     }
     
-    input[type='submit']:hover {
+    input[type='submit']:hover, #restart:hover {
         box-shadow: 5px 5px 0 black;
+        transform: scale(1.1);
     }
 
     .question {
