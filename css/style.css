@@ -1,10 +1,29 @@
 @font-face {
     font-family: 'Pixelify Sans', cursive;
     src: url(https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap);
-} 
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap);
+}
 
-* {
-    box-sizing: border-box;
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 :root {
@@ -17,53 +36,136 @@
     --white: #ffffffff;
 }
 
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 html {
     height: 100%;
 }
 
 body {
     margin: 0;
-    background-image: linear-gradient(var(--indigo), var(--denim), var(--glaucous));
+    background: url(../assets/background.png);
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    font-size: 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-size: 20px;
     text-align: center;
-    font-family: 'Pixelify Sans', cursive;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+audio {
+    display: none;
 }
 
 header {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
-    background-color: var(--gold);
     margin: 0;
     padding: 20px;
-    box-shadow: 0 8px 15px #0008;
-    border-bottom: 2px solid var(--denim);
 }
 
 header img {
     width: 200px;
     height: auto;
-    filter: drop-shadow(0 5px 5px #09458290);
+    filter: drop-shadow(0 5px 5px #094582ff);
 }
 
-.select {
-    visibility: hidden;
-    width: 30px;
+input[type='radio'] {
+    display: none;
+}
+
+input[type='submit'], #restart {
+    font-family: 'Pixelify Sans', cursive;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 4em;
+    align-self: center;
+    padding: 10px 20px;
+    transition: ease 0.5s;
+}
+
+.question {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    margin: 0.5em 0 5em;
+}
+
+.question label {
+    font-size: 1.2em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.show {
+    display: '';
+    position: absolute;
+    width: 40px;
+    margin: 2.2em 14em 0 0;
+}
+
+.textBox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    background-image: url(../assets/textBox.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2px 0;
+    width: 240px;
+    height: 130px;
+    border-radius: 10px;
+    transition: ease 0.5s;
+}
+
+.option {
+    font-family: 'Pixelify Sans', cursive;
+    position: absolute;
+    font-size: 1.5em;
+    margin: 0.7em 5.8em 0 0;
+    z-index: 98;
+}
+
+.appearAni {
+    animation: appear 1.5s;
+}
+
+#audioButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0000;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 99;
 }
 
 #quizTitle {
-    font-size: 15px;
-    width: 5em;
+    font-size: 18px;
+    width: 4em;
     margin-top: 0;
     align-self: center;
 }
 
 #startSection {
     background-image: url(../assets/textBox.png);
-    filter: drop-shadow(10px 10px 1px #000);
-    margin: 180px 30px 0;
-    background-size: contain;
+    margin: 180px auto 0;
+    height: 150px;
+    width: 300px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -71,13 +173,99 @@ header img {
 #start {
     font-family: 'Pixelify Sans', cursive;
     font-size: 40px;
-    margin: 30px 30px 30px 0;
+    margin: 30px 0px;
     padding: 10px;
     background: none;
 	border: none;
 	cursor: pointer;
 }
 
+#quizForm {
+    display: flex;
+    flex-flow: column wrap;
+    transition: ease 1.5s;
+}
+
+#quizForm h2 {
+    font-size: 1.4em;
+    padding: 0 10px;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+#quizForm h2 img {
+    padding-top: 8px;
+}
+
+#resultSection {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 0.5em 0 5em;
+}
+
+#resultSection h1 {
+    font-family: 'Pixelify Sans', cursive;
+
+}
+
+#resultSection h2 {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 1.4em;
+    padding: 0 10px;
+}
+
+#result {
+    margin: 30px 10px 200px;
+}
+
+#result p {
+    font-family: 'Pixelify Sans', cursive;
+    font-size: 80px;
+    margin: 0;
+}
+
+#correctAsnwers {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#correctAsnwers h1 {
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+#correctAsnwers p:last-child {
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+#correctAsnwers .textBox {
+    margin-bottom: 100px;
+}
+
+#backToTop {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0009;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border-radius: 10px;
+  }
+
+#backToTop img {
+    width: 30px;
+    height: 30px;
+    padding: 3px 2px 0 0;
+}
 
 
 @media only screen 
@@ -85,25 +273,89 @@ header img {
   and (max-device-width: 1024px) {
 
     header {
-        padding: 1.5rem;
+        padding: 1.5em;
     }
 
     header img {
-        width: 22rem;
+        width: 18em;
     }
 
-    .select {
-        width: 3rem;
+    input[type='submit'] {
+        font-size: 2.5em;
+        border: 4px solid black;
+        border-radius: 10px;
+        margin-bottom: 2em;
+    }
+
+    .question {
+        margin: 2em 0 6em;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question label {
+        font-size: 2.4em;
+    }
+    
+    .question label img{
+        width: 3em;
+    }
+    
+    .textBox {
+        margin: 2em 1.6em;
+        width: 16em;
+        height: 8em;
+        
+    }
+    
+    .textBox .option {
+        font-size: 2em;
+        margin: 0.4em 6em 0 0;
+    }
+
+    #audioButton {
+        top: 30px;
+        right: 30px;
+    }
+
+    #audioButton img {
+        width: 5em;
     }
 
     #quizTitle {
-        font-size: 1.3rem;
+        font-size: 1.8em;
+    }
+
+    #startSection {
+        height: 11em;
+        width: 20em;
     }
 
     #start {
-        font-size: 4rem;
-        padding: 1.3rem;
-        padding-left: 0;
+        font-size: 3.5em;
+        padding: 0.5em;
+        padding-left: 0.5em;
+    }
+
+    #quizForm h2 {
+        font-size: 2.4em;
+        padding: 0 1.2em;
+        margin-top: 2em;
+    }
+
+    #quizForm h2 img {
+        width: 4em;
+    }
+
+    #backToTop {
+        width: 60px;
+        height: 60px;
+    }
+
+    #backToTop img {
+        width: 50px;
+        height: 50px;
     }
 
 }
@@ -113,25 +365,105 @@ header img {
   and (max-device-width: 1600px) {
     
     header {
-        padding: 1rem;
+        padding: 2em;
     }
 
     header img {
-        width: 15rem;
+        width: 12em;
     }
 
-    .select {
-        width: 2rem;
+    input[type='submit'] {
+        font-size: 1.8em;
+        border: 4px solid black;
+        border-radius: 15px;
+        margin-bottom: 2em;
+    }
+    
+    input[type='submit']:hover, #restart:hover {
+        box-shadow: 5px 5px 0 black;
+        transform: scale(1.1);
+    }
+
+    .question {
+        margin: 2em 1em 6em;
+        flex-flow: row wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .question label {
+        font-size: 2.2em;
+    }
+    
+    .question label img{
+        width: 3em;
+    }
+    
+    .textBox {
+        margin: 2em 5em;
+        width: 16em;
+        height: 8em;
+    }
+    
+    .textBox .option {
+        font-size: 2em;
+        margin: 0.4em 6em 0 0;
+    }
+
+    #audioButton {
+        top: 35px;
+        right: 45px;
+    }
+
+    #audioButton img {
+        width: 4em;
     }
 
     #quizTitle {
-        font-size: 1rem;
+        font-size: 1.2em;
+    }
+
+    #startSection {
+        margin-top: 4em;
+        height: 9em;
+        width: 18em;
+        transition: ease 0.5s;
+    }
+
+    #startSection:hover {
+        filter: drop-shadow(10px 10px 0 #000);
+        transform: scale(1.1);
     }
 
     #start {
         font-size: 3rem;
-        padding: 1.3rem;
+        padding: 1.5rem;
         padding-left: 1.2rem;
+    }
+
+    #quizForm h2 {
+        font-size: 2.4em;
+        padding: 0 1.2em;
+        margin-top: 2em;
+    }
+
+    #quizForm h2 img {
+        width: 3em;
+    }
+    
+    #quizForm .textBox:hover {
+        filter: drop-shadow(10px 10px 0 #000);
+        transform: scale(1.1);
+    }
+
+    #backToTop {
+        width: 70px;
+        height: 70px;
+    }
+
+    #backToTop img {
+        width: 60px;
+        height: 60px;
     }
 
 }

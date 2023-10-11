@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Quiz</title>
+
+    <!-- Link CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <!-- Link fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -18,12 +28,393 @@
     </header>
 
     <main>
-        <section id="startSection">
-            <img src="./assets/select.png" alt="Select arrow" id="selectStart" class="select">
-            <button id="start">Start</button>
-        </section>
-    </main>
+        <!-- Music -->
+        <audio src="./assets/littlerootTown.mp3" id="littlerootTown" controls autoplay loop></audio>
 
+        <!-- Mute/Unmute button -->
+        <button id="audioButton"><img src="./assets/sprites/jigglypuff.gif" alt="jigglypuff Sprite Gif"></button>
+
+        <!-- Start menu -->
+        <section id="startSection">
+            <button type="button" id="start">Start</button>
+        </section>
+
+        <!-- Form/Quiz -->
+        <section>
+            <form action="#" id="quizForm" style="display: none;">
+
+                <!-- Question 1. -->
+                <h2>1. ¿Cuántos Pokémon hay en la primera generación?</h2>
+                <article id="question1" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer1a">148</label>
+                        <input type="radio" name="answer1" id="answer1a" class="radioButton" value="answer1a" tabindex="1">
+                    </div>
+
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer1b">151</label>
+                        <input type="radio" name="answer1" id="answer1b" class="radioButton" value="answer1b">
+                    </div>
+
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer1c">150</label>
+                        <input type="radio" name="answer1" id="answer1c" class="radioButton" value="answer1c">
+                    </div class="textBox">
+
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer1d">165</label>
+                        <input type="radio" name="answer1" id="answer1d" class="radioButton" value="answer1d">
+                    </div>
+                </article>
+
+                <!-- Question 2. -->
+                <h2>2. ¿Cuál de los siguientes tipos es débil contra movimientos de tipo <img src="./assets/types/electric.png" alt="Electric type"> ?</h2>
+                <article id="question2" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer2a"><img src="./assets/types/water.png" alt="Water type"></label>
+                        <input type="radio" name="answer2" id="answer2a" class="radioButton" value="answer2a" tabindex="2">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer2b"><img src="./assets/types/grass.png" alt="Grass type"></label>
+                        <input type="radio" name="answer2" id="answer2b" class="radioButton" value="answer2b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer2c"><img src="./assets/types/ground.png" alt="Ground type"></label>
+                        <input type="radio" name="answer2" id="answer2c" class="radioButton" value="answer2c">
+                    </div class="textBox">
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer2d"><img src="./assets/types/steel.png" alt="Steel type"></label>
+                        <input type="radio" name="answer2" id="answer2d" class="radioButton" value="answer2d">
+                    </div>
+                </article>
+
+                <!-- Question 3. -->
+                <h2>3. ¿En qué año se estrenó Pokémon Rojo y Verde?</h2>
+                <article id="question3" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer3a">1996</label>
+                        <input type="radio" name="answer3" id="answer3a" class="radioButton" value="answer3a" tabindex="3">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer3b">1989</label>
+                        <input type="radio" name="answer3" id="answer3b" class="radioButton" value="answer3b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer3c">2001</label>
+                        <input type="radio" name="answer3" id="answer3c" class="radioButton" value="answer3c">
+                    </div class="textBox">
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer3d">1999</label>
+                        <input type="radio" name="answer3" id="answer3d" class="radioButton" value="answer3d">
+                    </div>
+                </article>
+
+                <!-- Question 4. -->
+                <h2>4. ¿Cuál de los siguientes Pokémon no es de tipo <img src="./assets/types/bug.png" alt="Bug type"> ?</h2>
+                <article id="question" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer4a"><img src="./assets/sprites/shuckle.gif" alt="Shuckle Sprite Gif"></label>
+                        <input type="radio" name="answer4" id="answer4a" class="radioButton" value="answer4a" tabindex="4">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer4b"><img src="./assets/sprites/butterfree.gif" alt="Butterfree Sprite Gif"></label>
+                        <input type="radio" name="answer4" id="answer4b" class="radioButton" value="answer4b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer4c"><img src="./assets/sprites/pineco.gif" alt="Pineco Sprite Gif"></label>
+                        <input type="radio" name="answer4" id="answer4c" class="radioButton" value="answer4c">
+                    </div class="textBox">
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer4d"><img src="./assets/sprites/flygon.gif" alt="Flygon Sprite Gif"></label>
+                        <input type="radio" name="answer4" id="answer4d" class="radioButton" value="answer4d">
+                    </div>
+                </article>
+
+                <!-- Question 5. -->
+                <h2>5. ¿En que región se desarrollan los juegos Pokémon Ruby, Zafiro y Esmeralda?</h2>
+                <article id="question5" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer5a">Johto</label>
+                        <input type="radio" name="answer5" id="answer5a" class="radioButton" value="answer5a" tabindex="5">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer5b">Islas Naranja</label>
+                        <input type="radio" name="answer5" id="answer5b" class="radioButton" value="answer5b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer5c">Hoenn</label>
+                        <input type="radio" name="answer5" id="answer5c" class="radioButton" value="answer5c">
+                    </div class="textBox">
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer5d">Teselia</label>
+                        <input type="radio" name="answer5" id="answer5d" class="radioButton" value="answer5d">
+                    </div>
+                </article>
+
+                <!-- Question 6. -->
+                <h2>6. ¿Cuántas Ligas regionales Pokémon ha ganado Ash Ketchum?</h2>
+                <article id="question6" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer6a">1</label>
+                        <input type="radio" name="answer6" id="answer6a" class="radioButton" value="answer6a" tabindex="6">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer6b">2</label>
+                        <input type="radio" name="answer6" id="answer6b" class="radioButton" value="answer6b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer6c">Ninguna</label>
+                        <input type="radio" name="answer6" id="answer6c" class="radioButton" value="answer6c">
+                    </div class="textBox">
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer6d">Todas</label>
+                        <input type="radio" name="answer6" id="answer6d" class="radioButton" value="answer6d">
+                    </div>
+                </article>
+
+                <!-- Question 7. -->
+                <h2>7. ¿Cuál de los siguientes Pokémon es legendario?</h2>
+                <article id="question7" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer7a"><img src="./assets/sprites/darkrai.gif" alt="Darkrai Sprite Gif"></label>
+                        <input type="radio" name="answer7" id="answer7a" class="radioButton" value="answer7a" tabindex="7">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer7b"><img src="./assets/sprites/celebi.gif" alt="Celebi Sprite Gif"></label>
+                        <input type="radio" name="answer7" id="answer7b" class="radioButton" value="answer7b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer7c"><img src="./assets/sprites/azelf.gif" alt="Azelf Sprite Gif"></label>
+                        <input type="radio" name="answer7" id="answer7c" class="radioButton" value="answer7c">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer7d"><img src="./assets/sprites/dragonair.gif" alt="Dragonair Sprite Gif"></label>
+                        <input type="radio" name="answer7" id="answer7d" class="radioButton" value="answer7d">
+                    </div>
+                </article>
+
+                <!-- Question 8. -->
+                <h2>8. ¿Cuál de los siguientes Pokémon es español?</h2>
+                <article id="question8" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer8a"><img src="./assets/sprites/ho_oh.gif" alt="Ho-Oh Sprite Gif"></label>
+                        <input type="radio" name="answer8" id="answer8a" class="radioButton" value="answer8a" tabindex="8">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer8b"><img src="./assets/sprites/dragonite.gif" alt="Dragonite Sprite Gif"></label>
+                        <input type="radio" name="answer8" id="answer8b" class="radioButton" value="answer8b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer8c"><img src="./assets/sprites/bellossom.gif" alt="Bellossom Sprite Gif"></label>
+                        <input type="radio" name="answer8" id="answer8c" class="radioButton" value="answer8c">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer8d"><img src="./assets/sprites/honchkrow.gif" alt="Honchkrow Sprite Gif"></label>
+                        <input type="radio" name="answer8" id="answer8d" class="radioButton" value="answer8d">
+                    </div>
+                </article>
+
+                <!-- Question 9. -->
+                <h2>9. ¿Quién es el campeón del Alto Mando de la región Johto?</h2>
+                <article id="question9" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer9a"><img src="./assets/sprites/morti.png" alt="Morti Sprite">Morti</label>
+                        <input type="radio" name="answer9" id="answer9a" class="radioButton" value="answer9a" tabindex="9">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer9b"><img src="./assets/sprites/blaine.png" alt="Blaine">Blaine</label>
+                        <input type="radio" name="answer9" id="answer9b" class="radioButton" value="answer9b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer9c"><img src="./assets/sprites/debora.png" alt="Débora Sprite">Débora</label>
+                        <input type="radio" name="answer9" id="answer9c" class="radioButton" value="answer9c">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer9d"><img src="./assets/sprites/lance.png" alt="Lance Sprite">Lance</label>
+                        <input type="radio" name="answer9" id="answer9d" class="radioButton" value="answer9d">
+                    </div>
+                </article>
+
+                <!-- Question 10. -->
+                <h2>10. ¿Cuál de los siguientes tipos es efectivo contra <img src="./assets/types/dragon.png" alt="Dragon type"> ?</h2>
+                <article id="question10" class="question">
+                    <div class="textBox">
+                        <p class="option">A.</p>
+                        <label for="answer10a"><img src="./assets/types/dark.png" alt="Dark type"></label>
+                        <input type="radio" name="answer10" id="answer10a" class="radioButton" value="answer10a" tabindex="10">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">B.</p>
+                        <label for="answer10b"><img src="./assets/types/electric.png" alt="Electric type"></label>
+                        <input type ="radio" name="answer10" id="answer10b" class="radioButton" value="answer10b">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">C.</p>
+                        <label for="answer10c"><img src="./assets/types/fairy.png" alt="Fairy type"></label>
+                        <input type="radio" name="answer10" id="answer10c" class="radioButton" value="answer10c">
+                    </div>
+                
+                    <div class="textBox">
+                        <p class="option">D.</p>
+                        <label for="answer10d"><img src="./assets/types/water.png" alt="Water type"></label>
+                        <input type="radio" name="answer10" id="answer10d" class="radioButton" value="answer10d">
+                    </div>
+                </article>
+
+                    <input type="submit" id="submit" value="Enviar" tabindex="11">
+            </form>
+        </section>
+
+        <!-- Results section -->
+        <section id="resultSection" style="display: none;">
+            <article id="result">
+                <h1>¡Has seleccionado</h1>
+                <p></p>
+                <h2>preguntas correctas!</h2>
+            </article>
+
+            <article id="correctAsnwers">
+                <h1>Respuestas:</h1>
+                
+                <!-- Answer 1. -->
+                <h2>1. ¿Cuántos Pokémon hay en la primera generación?</h2>
+                <div class='textBox'>
+                    <p class="option">B.</p>
+                    <p>151</p>
+                </div>
+                
+                <!-- Answer 2. -->
+                <h2>2. ¿Cuál de los siguientes tipos es débil contra movimientos de tipo <img src="./assets/types/electric.png" alt="Electric type"> ?</h2>
+                <div class='textBox'>
+                    <p class="option">A.</p>
+                    <p><img src="./assets/types/water.png" alt="Water type"></p>
+                </div>
+                
+                <!-- Answer 3. -->
+                <h2>3. ¿En qué año se estrenó Pokémon Rojo y Verde?</h2>
+                <div class='textBox'>
+                    <p class="option">A.</p>
+                    <p>1996</p>
+                </div>
+                
+                <!-- Answer 4. -->
+                <h2>4. ¿Cuál de los siguientes Pokémon no es de tipo <img src="./assets/types/bug.png" alt="Bug type"> ?</h2>
+                <div class='textBox'>
+                    <p class="option">D.</p>
+                    <p><img src="./assets/sprites/flygon.gif" alt="Flygon Sprite Gif"></p>
+                </div>
+                
+                <!-- Answer 5. -->
+                <h2>5. ¿En que región se desarrollan los juegos Pokémon Ruby, Zafiro y Esmeralda?</h2>
+                <div class='textBox'>
+                    <p class="option">C.</p>
+                    <p>Hoenn</p>
+                </div>
+                
+                <!-- Answer 6. -->
+                <h2>6. ¿Cuántas Ligas regionales Pokémon ha ganado Ash Ketchum?</h2>
+                <div class='textBox'>
+                    <p class="option">A.</p>
+                    <p>1</p>
+                </div>
+                
+                <!-- Answer 7. -->
+                <h2>7. ¿Cuál de los siguientes Pokémon es legendario?</h2>
+                <div class='textBox'>
+                    <p class="option">C.</p>
+                    <p><img src="./assets/sprites/azelf.gif" alt="Azelf Sprite Gif"></p>
+                </div>
+                
+                <!-- Answer 8. -->
+                <h2>8. ¿Cuál de los siguientes Pokémon es español?</h2>
+                <div class='textBox'>
+                    <p class="option">B.</p>
+                    <p><img src="./assets/dragoniteEspana.jpg" alt="Dragonite Arriba España"></p>
+                </div>
+                
+                <!-- Answer 9. -->
+                <h2>9. ¿Quién es el campeón del Alto Mando de la región Johto?</h2>
+                <div class='textBox'>
+                    <p class="option">D.</p>
+                    <p><img src="./assets/sprites/lance.png" alt="Lance Sprite">Lance</p>
+                </div>
+                
+                <!-- Answer 10. -->
+                <h2>10. ¿Cuál de los siguientes tipos es efectivo contra <img src="./assets/types/dragon.png" alt="Dragon type"> ?</h2>
+                <div class='textBox'>
+                    <p class="option">C.</p>
+                    <p><img src="./assets/types/fairy.png" alt="Fairy type"></p>
+                </div>
+
+                <button type="button" id="restart" onclick="window.location.reload()">Reintentar</button>
+            </article>
+        </section>
+
+        <!-- Back to top button -->
+        <button id="backToTop"><img src="./assets/arrowTop.png" alt="Arrow back to top"></button>
+    </main>
 
     <script src="./script.js"></script>
 </body>
